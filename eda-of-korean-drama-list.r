@@ -9,10 +9,8 @@ output:
     toc: true
     toc_depth: 3
     fig_caption: true
-    fig_width: 8
-    fig_height: 5
-    theme: paper
-    highlight: zenburn
+    fig_width: 7
+    fig_height: 4.5
     code_folding: hide
 ---
 
