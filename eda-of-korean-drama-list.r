@@ -116,6 +116,7 @@ df_descriptors %>%
   ggplot(aes(x = year_airing, y = total_kdrama)) +
   geom_col(fill = "cornflowerblue")
 ```
+
 -   We can see that kdrama produce had decreased in 2008-2010, but increased significantly in 2011 til 2021. 
 This is the moment where the Korean Culture breakthrough and known in the world. [(src)](https://en.wikipedia.org/wiki/Korean_wave)
 
@@ -123,13 +124,14 @@ This is the moment where the Korean Culture breakthrough and known in the world.
 
 The data mostly as numeric data type, we can see the correlation between them:
 
-```{r warning=FALSE, fig.height=6, fig.width=8}
+```{r warning=FALSE, fig.height=6, out.width="100%"}
 chart.Correlation(
   df_descriptors[, purrr::map_lgl(df_descriptors, is.numeric)],
   histogram = T,
   method = c("pearson", "kendall", "spearman")
 )
 ```
+
 We find:
 
 -   All parameters seems like having a highly significant correlation to each other.
@@ -147,7 +149,7 @@ the chance to give the movie a score.
 
 ## DF Actors
 
-```{r}
+```{r, fig.height=4, out.width="100%"}
 p1 <- df_actors %>%
   group_by(actor) %>%
   summarise(total = n()) %>% 
