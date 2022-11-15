@@ -5,12 +5,12 @@ author: "@permadisatya"
 
 output:
   html_document:
-    df_print: paged
     toc: true
     toc_depth: 3
-    fig_caption: true
-    fig_width: 7
-    fig_height: 4.5
+    fig_width: 8
+    fig_height: 5
+    theme: cosmo
+    highlight: tango
     code_folding: hide
 ---
 
@@ -27,7 +27,7 @@ options(
 
 Here are the library that helps we discover the data:
 
-```{r}
+```{r warning=FALSE, message=FALSE}
 library(dplyr)
 library(reshape2)
 library(lubridate)
@@ -40,7 +40,7 @@ library(PerformanceAnalytics)
 
 # Load data
 
-```{r warning=FALSE}
+```{r warning=FALSE, message=FALSE}
 df_descriptors <- read.csv(
   file = "../input/korean-drama-list-about-740-unique-dramas/main_descriptors.csv",
   na.strings = ""
